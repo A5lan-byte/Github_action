@@ -1,0 +1,32 @@
+name: CI  
+
+#when it will run
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+#manually execute
+workflow_dispatch: 
+
+jobs:
+
+  build-and-release:
+
+    runs-on: ubunut-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: it runs a single line of script  
+        run: echo Hello, World
+
+      - name: multiple Lines of script
+        run: |
+          echo Add other actions to build
+          echo test, and deploy your project.
+
+
+
